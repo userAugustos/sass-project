@@ -1,0 +1,106 @@
+@import 'base'; //importando com sass. Não se usa a extensão do arquivo, pq ele também é scss
+@import 'mixin';
+
+//cirando classes para herança
+.flex{ 
+	display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+.internal-spacing{
+		padding: 0.8rem 1.3rem;
+}
+
+body{
+	@extend .internal-spacing;
+	@extend .flex; //conceito de herança
+	background: $inter-white;
+
+	div{ 
+		max-width: 33%;
+
+		//conceito de referência, para trabalharmos com atributos e states
+		&:hover{ //com o E comercial e com um hover, to referenciando que o hover vai se aplicar ao elemento a cima dele, nesse caso a div
+			background: transparent;
+		}
+	}
+}
+
+//encadeamento
+
+.container{
+
+	@extend .internal-spacing; //conceito de herança
+	@include box-shadow(#6060e0);
+	$background: #b6b6b8; //essa é uma variavel de escopo, ele não pode ser utilizada fora
+	color: $error;
+
+	p{
+		color: $dark-grey;
+	}
+}
+
+//mixin
+.container-mixin{
+
+	@extend .internal-spacing;
+	@include box-shadow($dark-grey); //passando a cor do mixin
+
+	background-color: #fff;
+	color: $success;
+}
+
+//condicionais
+.conditional-container{
+
+	@extend .internal-spacing;
+	@include box-shadow($error);
+	background-color: $dark-grey;
+
+	color: $pure-white;
+	&:hover{
+		color: $dark-grey;
+	}
+
+	#true{
+		@include change-weight(true);
+	}
+	#false{
+		@include change-weight(false);
+	}
+}
+
+.alert-boxes{
+	@extend .internal-spacing;
+
+	background: $dark-grey;
+
+	#error{
+		@include text-alert(error);
+	}
+	#warning{
+		@include text-alert(warning);
+	}
+	#success{
+		@include text-alert(success);
+	}
+}
+
+//estruturas de repetição
+.repeated-items{
+
+	@extend .internal-spacing;
+	@include box-shadow(#6060e0);
+	
+	@for $i from 1 through 5 { //for padrão
+		.text-#{$i} { //encaixamos variaveis com #{}, o i vai ir mudando
+			font-size: 8px * $i;
+		}
+	}
+	@each $key, $color in $colors { //forEach
+		.#{$color}-text {color: $color; margin: 5px auto}
+	}
+}
+

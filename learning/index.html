@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<title>Sass</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+	<link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+	<h1></h1>
+
+	<div class="container">
+		<strong>Então esse texto ta no container e ta com a cor pro container</strong>
+		<p>Esse também ta no container, só que com encadeamento to estilizando ele diretamente dentro do container, assim ele fica com cor diferente</p>
+	</div>
+
+	<div class="container-mixin">
+		<p>Esse container vai receber um mixin</p>
+	</div>
+
+	<div class="conditional-container">
+		<h6>As duas são tags <b>p</b></h6>
+		<p id="true">Essa fonte ta mandando true</h2>
+		<p id="false">Essa ta mandando false</p>
+	</div>
+
+	<div class="alert-boxes">
+		<ul>
+			<li>
+				<h4 id="error">Alert Error</h4>
+			</li>
+			<li>
+				<h4 id="warning">Alert Warning</h4>
+			</li>
+			<li>
+				<h4 id="success">Alert success</h4>
+			</li>
+		</ul>
+	</div>
+
+	<div class="repeated-items">
+		<p class="text-1 blue-text">Tamanho 1 recebendo blue</p>
+		<p class="text-2 blue-text">Tamanho 2 recebendo blue</p>
+		<p class="text-3 yellow-text">Tamanho 3 recebendo yellow</p>
+		<p class="text-4 red-text">Tamanho 4 recebendo red</p>
+		<p class="text-5 red-text">Tamanho 5 recebendo red</p>
+	</div>
+
+</body>
+</html>

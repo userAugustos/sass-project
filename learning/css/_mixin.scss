@@ -1,0 +1,27 @@
+//mixin é uma forma de passar estilos para varios elementos, e como podemos passar parametros para os mixins assim como em uma função, podemos então ter um mixin que pode mandar um estilo, pra varios elementos de formas diferentes
+
+@mixin box-shadow($color) {
+	box-shadow: 2px 2px 4px -2px rgba($color, 0.8);
+}
+
+//condicionais
+@mixin change-weight($bool){
+	@if $bool == true {
+		font-weight: bold;
+	}
+	@else {
+		font-weight: 400px;
+	}
+}
+
+@mixin text-alert($text-type){
+	@if $text-type == error {
+		color: $error;
+	}
+	@else if $text-type == warning {
+		color: $warning;
+	}
+	@else {
+		color: $success;
+	}
+}

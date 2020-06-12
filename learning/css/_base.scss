@@ -1,0 +1,23 @@
+//arquivos com _nome.scss são chamados de partials, eles não são compilados
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body, html{
+	font-size: 100%;
+	max-width: 100%;
+	height: 100%;
+}
+
+$pure-white: #f0f0fc;
+$dark-grey: #383940;
+$inter-white: #ede7e1;
+$soft-gold: #faf16e; //variaveis com sass
+$error: #f5402c;
+$success: #6beb44; 
+$warning: #f5c764;
+
+//array de cores
+
+$colors: (color1: blue, color2: red, color3: yellow);

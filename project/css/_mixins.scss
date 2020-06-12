@@ -1,0 +1,8 @@
+@mixin boundaries($marginAuto: true){
+	width: 90%;
+	max-width: 980px;
+
+	@if $marginAuto {
+		margin: auto;
+	}
+}
